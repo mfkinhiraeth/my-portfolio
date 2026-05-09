@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function Portfolio() {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
+  const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   const projects = [
     {
@@ -11,14 +11,18 @@ export default function Portfolio() {
       description:
         "A web-based travel analytics platform that evaluates destinations based on cost, distance, and user preferences. Built with data analytics and business intelligence techniques.",
       tech: ["Laravel", "MySQL", "Power BI"],
-      image: "/project1.jpg",
+      images: ["/project1.jpg", "/project1b.jpg"],
+      details:
+        "Final Year Project focused on travel decision support system using data analytics, filtering algorithms, and visualization dashboards.",
     },
     {
       title: "NYC DOT Data Warehouse",
       description:
-        "Designed a data warehouse using dimensional modelling for NYC traffic crash data (2021–2022) with KPI dashboards and analysis.",
+        "Designed a data warehouse using dimensional modelling for NYC traffic crash data (2021–2022).",
       tech: ["MySQL", "ETL", "Tableau"],
-      image: "/project2.jpg",
+      images: ["/project2.jpg", "/project2b.jpg"],
+      details:
+        "Built ETL pipeline and KPI dashboards to analyze traffic accidents, injuries, fatalities, and contributing factors.",
     },
   ];
 
@@ -34,8 +38,10 @@ export default function Portfolio() {
     "VS Code",
   ];
 
+  const activeProject = selectedProject !== null ? projects[selectedProject] : null;
+
   return (
-    <main className="min-h-screen bg-[#0b0f1a] text-white">
+    <main className="min-h-screen bg-[#0b0f1a] text-white font-sans">
 
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-md border-b border-white/10 z-50">
@@ -53,11 +59,10 @@ export default function Portfolio() {
       <section className="pt-32 pb-20 bg-gradient-to-b from-indigo-900/30 to-transparent">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-          {/* TEXT */}
           <div>
             <h1 className="text-5xl font-bold mb-4">Ahmad Nur Hisyam</h1>
             <p className="text-gray-300">
-              IT Student | Web Development | Data Analytics
+              Information Technology Student | Web Development | Data Analytics
             </p>
             <p className="text-gray-400 mt-2">
               Gombak, Malaysia | hisyammansor21@gmail.com
@@ -68,14 +73,9 @@ export default function Portfolio() {
             </button>
           </div>
 
-          {/* PROFILE PICTURE */}
           <div className="flex justify-center">
-            <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-500 shadow-xl hover:scale-105 transition">
-              <img
-                src="/Profile.jpg"
-                alt="Profile"
-                className="w-full h-full object-cover"
-              />
+            <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-500 shadow-xl">
+              <img src="/profile.jpg" className="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -87,12 +87,10 @@ export default function Portfolio() {
         {/* ABOUT */}
         <section id="about">
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
-          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-[1.01] transition">
-            Motivated Information Technology student with a strong foundation in web application
-            development and data analytics. Experienced in building full-stack projects using Laravel and
-            developing data-driven solutions. Possesses strong problem-solving skills, attention to detail, and
-            the ability to work effectively in team environments. Eager to apply technical skills and grow in a
-            dynamic IT field.
+          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
+            <p className="text-gray-300 leading-relaxed">
+              Motivated Information Technology student with a strong foundation in web application development and data analytics. Experienced in building full-stack projects using Laravel and developing data-driven solutions. Possesses strong problem-solving skills, attention to detail, and the ability to work effectively in team environments. Eager to apply technical skills and grow in a dynamic IT field.
+            </p>
           </div>
         </section>
 
@@ -104,57 +102,74 @@ export default function Portfolio() {
             {projects.map((p, i) => (
               <div
                 key={i}
-                onClick={() => setActiveProject(i)}
+                onClick={() => setSelectedProject(i)}
                 className="cursor-pointer bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:-translate-y-2 transition"
               >
-                {/* IMAGE */}
-                <div className="h-48 bg-black">
-                  <img
-                    src="/project1.jpg"
-                    className="w-full h-full object-cover hover:scale-110 transition"
-                  />
+
+                {/* MULTIPLE IMAGES */}
+                <div className="h-48 flex overflow-x-auto">
+                  {p.images.map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img}
+                      className="w-full object-cover"
+                    />
+                  ))}
                 </div>
 
-                {/* CONTENT */}
                 <div className="p-5">
                   <h3 className="text-xl font-semibold">{p.title}</h3>
                   <p className="text-gray-300 text-sm mt-2">{p.description}</p>
-
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {p.tech.map((t, j) => (
-                      <span
-                        key={j}
-                        className="text-xs bg-indigo-500/20 px-3 py-1 rounded-full"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
+        {/* MODAL */}
+        {activeProject && (
+          <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-6">
+            <div className="bg-[#111827] max-w-2xl w-full rounded-2xl p-6 border border-white/10 relative">
+
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-3 right-4 text-white text-xl"
+              >
+                ✕
+              </button>
+
+              {/* IMAGE GALLERY */}
+              <div className="flex overflow-x-auto gap-2 mb-4">
+                {activeProject.images.map((img, i) => (
+                  <img key={i} src={img} className="w-full h-56 object-cover rounded-xl" />
+                ))}
+              </div>
+
+              <h2 className="text-2xl font-bold mb-2">{activeProject.title}</h2>
+              <p className="text-gray-300 mb-4">{activeProject.details}</p>
+
+              <div className="flex flex-wrap gap-2">
+                {activeProject.tech.map((t, i) => (
+                  <span key={i} className="bg-indigo-500/20 text-indigo-200 px-3 py-1 rounded-full text-sm">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* SKILLS */}
         <section id="skills">
           <h2 className="text-3xl font-bold mb-6">Skills</h2>
           <div className="flex flex-wrap gap-3">
             {skills.map((s, i) => (
-              <span
-                key={i}
-                className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl hover:bg-white/10 transition"
-              >
+              <span key={i} className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl">
                 {s}
               </span>
             ))}
           </div>
         </section>
-
-        {/* FOOTER */}
-        <footer className="text-center text-gray-500 pt-10">
-          © 2026 Ahmad Nur Hisyam | Built with Next.js
-        </footer>
 
       </div>
     </main>
