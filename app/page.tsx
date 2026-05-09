@@ -88,7 +88,11 @@ export default function Portfolio() {
         <section id="about">
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
           <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:scale-[1.01] transition">
-            Motivated IT student with strong foundations in web development and data analytics. Passionate about building clean and functional systems.
+            Motivated Information Technology student with a strong foundation in web application
+            development and data analytics. Experienced in building full-stack projects using Laravel and
+            developing data-driven solutions. Possesses strong problem-solving skills, attention to detail, and
+            the ability to work effectively in team environments. Eager to apply technical skills and grow in a
+            dynamic IT field.
           </div>
         </section>
 
