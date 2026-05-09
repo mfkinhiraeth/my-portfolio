@@ -75,7 +75,7 @@ export default function Portfolio() {
           <div className="flex justify-center">
             <div className="w-72 h-72 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-300 p-1 shadow-2xl">
               <img
-                src="/profile.jpg"
+                src="/Profile.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full"
               />
