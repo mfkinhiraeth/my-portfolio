@@ -32,7 +32,7 @@ export default function Portfolio() {
   pdf: "/tverse-article.pdf",
   details:
     "This project involved academic research and was published in the IIUM Journal website as part of technopreneurship coursework.",
-}
+},
 {
   title: "Smart Data Analytics Research Unit – Client Project",
   description:
