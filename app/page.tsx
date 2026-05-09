@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
-  const [visibleSections, setVisibleSections] = useState<string[]>([]);
 
   // ✨ Typing animation
   const fullText =
@@ -18,30 +17,13 @@ export default function Portfolio() {
       setText(fullText.slice(0, i));
       i++;
 
-      if (i > fullText.length) clearInterval(interval);
+      if (i > fullText.length) {
+        clearInterval(interval);
+      }
     }, 50);
 
     return () => clearInterval(interval);
   }, []);
-
-  // ✨ Scroll animation observer
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisibleSections((prev) => [...prev, entry.target.id]);
-        }
-      });
-    });
-
-    document.querySelectorAll("section").forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const isVisible = (id: string) => visibleSections.includes(id);
 
   const projects = [
     {
@@ -75,7 +57,7 @@ export default function Portfolio() {
     {
       title: "Smart Data Analytics Research Unit – Client Project",
       description:
-        "Website redesign proposal for KICT research unit.",
+        "Website redesign proposal for KICT research unit. https://kulliyyah.iium.edu.my/kict/smartanalytics/",
       tech: ["UI/UX", "Project Management", "Requirement Analysis"],
       images: ["/sda1.jpeg", "/sda2.jpeg"],
       details:
@@ -96,7 +78,7 @@ export default function Portfolio() {
     "Microsoft Powerpoint",
     "Microsoft Excel",
     "GitHub",
-    "Visual Studio Code",
+    "Visual Studio Code"
   ];
 
   const activeProject =
@@ -116,12 +98,12 @@ export default function Portfolio() {
 
         <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 
-          <div className="animate-fadeUp">
+          <div className="animate-[fadeUp_0.8s_ease-out]">
             <h1 className="text-5xl font-bold mb-4">
               Ahmad Nur Hisyam
             </h1>
 
-            {/* typing */}
+            {/* ✨ Typing animation */}
             <p className="text-gray-300 text-lg">
               <span className="border-r-2 border-indigo-400 pr-1 animate-pulse">
                 {text}
@@ -132,30 +114,31 @@ export default function Portfolio() {
               Gombak, Malaysia | hisyammansor21@gmail.com
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+            href="/Ahmad Nur Hisyam Bin Mohamad Mansor - Resume.pdf"
+            download
+            className="px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition shadow-lg hover:shadow-indigo-500/30"
+            >
+            Download Resume
+            </a>
 
-              <a
-                href="/Ahmad Nur Hisyam Bin Mohamad Mansor - Resume.pdf"
-                download
-                className="px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition shadow-lg"
-              >
-                Download Resume
-              </a>
-
-              <a
-                href="/Ahmad Nur Hisyam Bin Mohamad Mansor - University Referral Letter.pdf"
-                download
-                className="px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition shadow-lg"
-              >
-                University Referral Letter
-              </a>
-
+            <a
+            href="/Ahmad Nur Hisyam Bin Mohamad Mansor - University Referral Letter.pdf"
+            download
+            className="px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition shadow-lg hover:shadow-indigo-500/30"
+            >
+            Download University Referral Letter
+            </a>
             </div>
           </div>
 
-          <div className="flex justify-center animate-fadeIn">
+          <div className="flex justify-center animate-[fadeIn_1.2s_ease-out]">
             <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-500 shadow-xl">
-              <img src="/Profile.jpg" className="w-full h-full object-cover" />
+              <img
+                src="/Profile.jpg"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
@@ -165,10 +148,7 @@ export default function Portfolio() {
       <div className="max-w-6xl mx-auto px-6 space-y-24 pb-20">
 
         {/* ABOUT */}
-        <section
-          id="about"
-          className={isVisible("about") ? "animate-fadeUp" : "opacity-0"}
-        >
+        <section>
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
           <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
             <p className="text-gray-300 leading-relaxed">
@@ -181,11 +161,36 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* AWARDS & ACHIEVEMENTS */} 
+        <section id="awards"> 
+        <h2 className="text-3xl font-bold mb-6">Awards & Achievements</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:-translate-y-1 transition">
+          <h3 className="text-xl font-semibold">Dean’s List Award</h3>
+          <p className="text-gray-400 mt-1">IIUM</p>
+          <p className="text-gray-300 mt-2">
+            <p>Semester 2 2022/2023 </p>
+            <p>Semester 1 & 2 2024/2025 </p> 
+            <p>Semester 1 2025/2026</p>
+            </p> 
+            </div>
+
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:-translate-y-1 transition">
+            <h3 className="text-xl font-semibold">Bronze Award – Final Year Project 1</h3>
+            <p className="text-gray-400 mt-1">IIUM</p> 
+            <p className="text-gray-300 mt-2"> Awarded for outstanding Final Year Project 1 in data analytics and travel intelligence system which is Destinalytics. </p> 
+            </div>
+
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:-translate-y-1 transition">
+            <h3 className="text-xl font-semibold">CCNAv7: Introduction to Networks</h3>
+            <p className="text-gray-400 mt-1">Cisco Networking Academy</p>
+            <p className="text-gray-300 mt-2"> Learned networking fundamentals including routing, switching, IP addressing, and troubleshooting. </p>
+            </div> 
+            </div> 
+            </section>
+        
         {/* PROJECTS */}
-        <section
-          id="projects"
-          className={isVisible("projects") ? "animate-fadeUp" : "opacity-0"}
-        >
+        <section>
           <h2 className="text-3xl font-bold mb-6">Projects</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -193,7 +198,7 @@ export default function Portfolio() {
               <div
                 key={i}
                 onClick={() => setSelectedProject(i)}
-                className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden cursor-pointer hover:-translate-y-2 transition duration-300"
+                className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden cursor-pointer hover:-translate-y-2 transition"
               >
                 {p.images && (
                   <div className="h-48 flex overflow-x-auto gap-2">
@@ -219,10 +224,7 @@ export default function Portfolio() {
         </section>
 
         {/* SKILLS */}
-        <section
-          id="skills"
-          className={isVisible("skills") ? "animate-fadeUp" : "opacity-0"}
-        >
+        <section>
           <h2 className="text-3xl font-bold mb-6">Skills</h2>
 
           <div className="flex flex-wrap gap-3">
@@ -242,7 +244,7 @@ export default function Portfolio() {
       {activeProject && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-6">
 
-          <div className="bg-[#111827] max-w-2xl w-full rounded-2xl p-6 border border-white/10 relative animate-fadeUp">
+          <div className="bg-[#111827] max-w-2xl w-full rounded-2xl p-6 border border-white/10 relative">
 
             <button
               onClick={() => setSelectedProject(null)}
