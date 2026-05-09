@@ -126,7 +126,7 @@ export default function Portfolio() {
             <a
             href="/Ahmad Nur Hisyam Bin Mohamad Mansor - University Referral Letter.pdf"
             download
-            className="px-5 py-2 bg-white/10 border border-white/20 rounded-xl hover:bg-white/20 transition"
+            className="px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition shadow-lg hover:shadow-indigo-500/30"
             >
             Download University Referral Letter
             </a>
