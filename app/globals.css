@@ -1,15 +1,9 @@
 @import "tailwindcss";
 
+/* Root theme */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,6 +18,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ===== Animations ===== */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -44,33 +41,7 @@ body {
   }
 }
 
-.animate-fadeUp {
-  animation: fadeUp 0.8s ease-out forwards;
-}
-
-.animate-fadeIn {
-  animation: fadeIn 1.2s ease-out forwards;
-}
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
+/* Animation classes */
 .animate-fadeUp {
   animation: fadeUp 0.8s ease-out forwards;
 }
@@ -79,7 +50,7 @@ body {
   animation: fadeIn 1s ease-out forwards;
 }
 
-/* smooth scroll */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
