@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function Portfolio() {
-  const [activeProject, setActiveProject] = useState(null);
+  const [activeProject, setActiveProject] = useState<number | null>(null);
 
   const projects = [
     {
