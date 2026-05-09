@@ -57,7 +57,7 @@ export default function Portfolio() {
     {
       title: "Smart Data Analytics Research Unit – Client Project",
       description:
-        "Website redesign proposal for KICT research unit.",
+        "Website redesign proposal for KICT research unit. https://kulliyyah.iium.edu.my/kict/smartanalytics/",
       tech: ["UI/UX", "Project Management", "Requirement Analysis"],
       images: ["/sda1.jpeg", "/sda2.jpeg"],
       details:
