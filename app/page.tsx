@@ -46,7 +46,7 @@ export default function Portfolio() {
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-md border-b border-white/10 z-50">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-          <h1 className="font-bold tracking-wide">AHMAD HISYAM</h1>
+          <h1 className="font-bold tracking-wide">AHMAD NUR HISYAM</h1>
           <div className="flex gap-6 text-sm text-gray-300">
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
@@ -75,7 +75,7 @@ export default function Portfolio() {
 
           <div className="flex justify-center">
             <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-500 shadow-xl">
-              <img src="/profile.jpg" className="w-full h-full object-cover" />
+              <img src="Profile.jpg" className="w-full h-full object-cover" />
             </div>
           </div>
 
