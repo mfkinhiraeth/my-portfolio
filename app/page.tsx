@@ -114,10 +114,11 @@ export default function Portfolio() {
               Gombak, Malaysia | hisyammansor21@gmail.com
             </p>
 
+          <div className="mt-6 flex flex-wrap gap-3">
             <a
             href="/Ahmad Nur Hisyam Bin Mohamad Mansor - Resume.pdf"
             download
-            className="mt-6 inline-block px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition"
+            className="px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition shadow-lg hover:shadow-indigo-500/30"
             >
             Download Resume
             </a>
@@ -125,10 +126,11 @@ export default function Portfolio() {
             <a
             href="/Ahmad Nur Hisyam Bin Mohamad Mansor - University Referral Letter.pdf"
             download
-            className="mt-6 inline-block px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition"
+            className="px-5 py-2 bg-white/10 border border-white/20 rounded-xl hover:bg-white/20 transition"
             >
             Download University Referral Letter
             </a>
+            </div>
           </div>
 
           <div className="flex justify-center animate-[fadeIn_1.2s_ease-out]">
