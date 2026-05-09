@@ -24,19 +24,19 @@ export default function Portfolio() {
       details:
         "Built ETL pipeline and KPI dashboards to analyze traffic accidents, injuries, fatalities, and contributing factors.",
     },
-    {
+   {
   title: "Tverse – Digital Tutoring Platform (Technopreneurship Research)",
   description:
     "Conducted a research-based project proposing a conceptual business model for a digital tutoring platform using the Design Thinking approach.",
   tech: ["Design Thinking", "Business Model Canvas", "Research", "UI/UX Concept"],
-  images: ["/tverse1.jpg", "/tverse2.jpg"],
+  pdf: "/tverse-article.pdf",
   details:
-    "This project involved academic research and collaboration to design Tverse, a digital tutoring platform concept. The work was published in the IIUM Journal website as part of a technopreneurship subject deliverable.",
-},
+    "This project involved academic research and was published in the IIUM Journal website as part of technopreneurship coursework.",
+}
 {
   title: "Smart Data Analytics Research Unit – Client Project",
   description:
-    "Worked with a real client from KICT as part of Project Management in IT subject to redesign and improve an academic research unit website.",
+    "Worked with a real client from KICT as part of Project Management in IT subject to redesign and improve an academic research unit website. https://kulliyyah.iium.edu.my/kict/smartanalytics/",
   tech: ["Requirement Analysis", "UI/UX Design", "Project Management", "Client Communication"],
   images: ["/sda1.jpg", "/sda2.jpg"],
   details:
@@ -180,6 +180,16 @@ export default function Portfolio() {
         </section>
 
         {/* MODAL */}
+
+        {activeProject.pdf && (
+  <a
+    href={activeProject.pdf}
+    target="_blank"
+    className="inline-block mt-4 px-4 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition"
+  >
+    View Research Paper (PDF)
+  </a>
+)}
         {activeProject && (
           <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-6">
             <div className="bg-[#111827] max-w-2xl w-full rounded-2xl p-6 border border-white/10 relative">
