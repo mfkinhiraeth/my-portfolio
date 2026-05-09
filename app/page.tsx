@@ -24,6 +24,24 @@ export default function Portfolio() {
       details:
         "Built ETL pipeline and KPI dashboards to analyze traffic accidents, injuries, fatalities, and contributing factors.",
     },
+    {
+  title: "Tverse – Digital Tutoring Platform (Technopreneurship Research)",
+  description:
+    "Conducted a research-based project proposing a conceptual business model for a digital tutoring platform using the Design Thinking approach.",
+  tech: ["Design Thinking", "Business Model Canvas", "Research", "UI/UX Concept"],
+  images: ["/tverse1.jpg", "/tverse2.jpg"],
+  details:
+    "This project involved academic research and collaboration to design Tverse, a digital tutoring platform concept. The work was published in the IIUM Journal website as part of a technopreneurship subject deliverable.",
+},
+{
+  title: "Smart Data Analytics Research Unit – Client Project",
+  description:
+    "Worked with a real client from KICT as part of Project Management in IT subject to redesign and improve an academic research unit website.",
+  tech: ["Requirement Analysis", "UI/UX Design", "Project Management", "Client Communication"],
+  images: ["/sda1.jpg", "/sda2.jpg"],
+  details:
+    "Our team collaborated with the Head of Smart Data Analytics Research Unit (KICT IIUM) to gather requirements and propose a full website redesign solution for better usability and academic presentation.",
+},
   ];
 
   const skills = [
