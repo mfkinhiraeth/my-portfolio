@@ -9,49 +9,38 @@ export default function Portfolio() {
     {
       title: "Destinalytics – Travel Analytics Platform (FYP)",
       description:
-        "A web-based travel analytics platform that evaluates destinations based on cost, distance, and user preferences. Built with data analytics and business intelligence techniques.",
+        "A web-based travel analytics platform that evaluates destinations based on cost, distance, and user preferences.",
       tech: ["Laravel", "MySQL", "Power BI"],
       images: ["/project1.png", "/project1b.jpg"],
       details:
-        "Final Year Project focused on travel decision support system using data analytics, filtering algorithms, and visualization dashboards.",
+        "Final Year Project focused on travel decision support system using data analytics and visualization dashboards.",
     },
     {
       title: "NYC DOT Data Warehouse",
       description:
-        "Designed a data warehouse using dimensional modelling for NYC traffic crash data (2021–2022).",
+        "Designed a data warehouse using dimensional modelling for NYC traffic crash data.",
       tech: ["MySQL", "ETL", "Tableau"],
       images: ["/project2.png", "/project2b.jpg"],
       details:
-        "Built ETL pipeline and KPI dashboards to analyze traffic accidents, injuries, fatalities, and contributing factors.",
+        "Built ETL pipeline and KPI dashboards to analyze traffic accidents and contributing factors.",
     },
     {
-      title:
-        "Tverse – Digital Tutoring Platform (Technopreneurship Research)",
+      title: "Tverse – Digital Tutoring Platform (Research)",
       description:
-        "Conducted a research-based project proposing a conceptual business model for a digital tutoring platform using the Design Thinking approach.",
-      tech: [
-        "Design Thinking",
-        "Business Model Canvas",
-        "Research",
-        "UI/UX Concept",
-      ],
+        "Conceptual business model using Design Thinking for a digital tutoring platform.",
+      tech: ["Design Thinking", "Research", "UI/UX"],
       pdf: "/tverse-article.pdf",
       details:
-        "This project involved academic research and was published in the IIUM Journal website as part of technopreneurship coursework.",
+        "Published research in IIUM Journal under technopreneurship subject.",
     },
     {
       title: "Smart Data Analytics Research Unit – Client Project",
       description:
-        "Worked with a real client from KICT to redesign and improve an academic research unit website.",
-      tech: [
-        "Requirement Analysis",
-        "UI/UX Design",
-        "Project Management",
-        "Client Communication",
-      ],
+        "Website redesign proposal for KICT research unit.",
+      tech: ["UI/UX", "Requirement Analysis", "Project Management"],
       images: ["/sda1.jpg", "/sda2.jpg"],
       details:
-        "Collaborated with Prof. Ts. Dr. Mira Kartiwi (Head of SDA Research Unit) to propose a full website redesign.",
+        "Worked with Prof. Ts. Dr. Mira Kartiwi on real client requirements.",
     },
   ];
 
@@ -64,7 +53,6 @@ export default function Portfolio() {
     "MySQL",
     "Power BI",
     "Tableau",
-    "VS Code",
   ];
 
   const activeProject =
@@ -72,26 +60,27 @@ export default function Portfolio() {
 
   return (
     <main className="min-h-screen bg-[#0b0f1a] text-white font-sans">
-      {/* NAVBAR */}
-      <nav className="fixed top-0 w-full bg-black/40 backdrop-blur-md border-b border-white/10 z-50">
-        <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-          <h1 className="font-bold tracking-wide">AHMAD NUR HISYAM</h1>
-          <div className="flex gap-6 text-sm text-gray-300">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-          </div>
-        </div>
-      </nav>
 
       {/* HERO */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-indigo-900/30 to-transparent">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h1 className="text-5xl font-bold mb-4">Ahmad Nur Hisyam</h1>
+      <section className="relative pt-32 pb-20 overflow-hidden">
+
+        {/* glowing background */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-indigo-500 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-500 rounded-full blur-3xl animate-pulse"></div>
+        </div>
+
+        <div className="relative max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+          <div className="animate-[fadeUp_0.8s_ease-out]">
+            <h1 className="text-5xl font-bold mb-4">
+              Ahmad Nur Hisyam
+            </h1>
+
             <p className="text-gray-300">
               Information Technology Student | Web Development | Data Analytics
             </p>
+
             <p className="text-gray-400 mt-2">
               Gombak, Malaysia | hisyammansor21@gmail.com
             </p>
@@ -101,7 +90,7 @@ export default function Portfolio() {
             </button>
           </div>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-[fadeIn_1.2s_ease-out]">
             <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-500 shadow-xl">
               <img
                 src="/Profile.jpg"
@@ -109,64 +98,52 @@ export default function Portfolio() {
               />
             </div>
           </div>
+
         </div>
       </section>
 
       <div className="max-w-6xl mx-auto px-6 space-y-24 pb-20">
+
         {/* ABOUT */}
-        <section id="about">
+        <section>
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
           <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
             <p className="text-gray-300 leading-relaxed">
-              Motivated Information Technology student with a strong
-              foundation in web application development and data analytics.
-              Experienced in building full-stack projects using Laravel and
-              developing data-driven solutions. Possesses strong problem-solving
-              skills, attention to detail, and the ability to work effectively
-              in team environments. Eager to apply technical skills and grow in
-              a dynamic IT field.
+              Motivated Information Technology student with strong foundation in web development and data analytics. Experienced in Laravel, MySQL, and data-driven solutions with strong problem-solving skills and teamwork ability.
             </p>
           </div>
         </section>
 
         {/* AWARDS */}
-        <section id="awards">
-          <h2 className="text-3xl font-bold mb-6">
-            Awards & Achievements
-          </h2>
+        <section>
+          <h2 className="text-3xl font-bold mb-6">Awards & Achievements</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-              <h3 className="text-xl font-semibold">Dean’s List Award</h3>
-              <p className="text-gray-300 mt-2 space-y-1">
-                <p>Semester 2 2022/2023</p>
-                <p>Semester 1 & 2 2024/2025</p>
-                <p>Semester 1 2025/2026</p>
+            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 className="font-semibold">Dean’s List</h3>
+              <p className="text-gray-300 text-sm mt-2">
+                Multiple semesters (IIUM)
               </p>
             </div>
 
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-              <h3 className="text-xl font-semibold">
-                Bronze Award – FYP
-              </h3>
-              <p className="text-gray-300 mt-2">
-                Awarded for Destinalytics Final Year Project.
+            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 className="font-semibold">Bronze Award – FYP</h3>
+              <p className="text-gray-300 text-sm mt-2">
+                Destinalytics Project
               </p>
             </div>
 
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-              <h3 className="text-xl font-semibold">
-                CCNAv7 Certification
-              </h3>
-              <p className="text-gray-300 mt-2">
-                Cisco Networking Academy - Networking fundamentals.
+            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
+              <h3 className="font-semibold">CCNA Certification</h3>
+              <p className="text-gray-300 text-sm mt-2">
+                Cisco Networking Academy
               </p>
             </div>
           </div>
         </section>
 
         {/* PROJECTS */}
-        <section id="projects">
+        <section>
           <h2 className="text-3xl font-bold mb-6">Projects</h2>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -174,16 +151,15 @@ export default function Portfolio() {
               <div
                 key={i}
                 onClick={() => setSelectedProject(i)}
-                className="cursor-pointer bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:-translate-y-2 transition"
+                className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden cursor-pointer hover:-translate-y-2 transition"
               >
-                {/* IMAGES */}
-                {p.images && p.images.length > 0 && (
+                {p.images && (
                   <div className="h-48 flex overflow-x-auto gap-2">
                     {p.images.map((img, idx) => (
                       <img
                         key={idx}
                         src={img}
-                        className="h-full w-64 flex-shrink-0 object-cover rounded-lg"
+                        className="h-full w-64 object-cover flex-shrink-0 rounded-lg"
                       />
                     ))}
                   </div>
@@ -201,8 +177,9 @@ export default function Portfolio() {
         </section>
 
         {/* SKILLS */}
-        <section id="skills">
+        <section>
           <h2 className="text-3xl font-bold mb-6">Skills</h2>
+
           <div className="flex flex-wrap gap-3">
             {skills.map((s, i) => (
               <span
@@ -216,10 +193,12 @@ export default function Portfolio() {
         </section>
       </div>
 
-      {/* MODAL (OUTSIDE MAP - IMPORTANT) */}
+      {/* MODAL */}
       {activeProject && (
         <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-6">
+
           <div className="bg-[#111827] max-w-2xl w-full rounded-2xl p-6 border border-white/10 relative">
+
             <button
               onClick={() => setSelectedProject(null)}
               className="absolute top-3 right-4 text-white text-xl"
@@ -243,6 +222,7 @@ export default function Portfolio() {
             <h2 className="text-2xl font-bold mb-2">
               {activeProject.title}
             </h2>
+
             <p className="text-gray-300 mb-4">
               {activeProject.details}
             </p>
@@ -268,9 +248,11 @@ export default function Portfolio() {
                 View Research Paper (PDF)
               </a>
             )}
+
           </div>
         </div>
       )}
+
     </main>
   );
 }
