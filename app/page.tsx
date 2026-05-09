@@ -74,6 +74,11 @@ export default function Portfolio() {
     "MySQL",
     "Power BI",
     "Tableau",
+    "Microsoft Word",
+    "Microsoft Powerpoint",
+    "Microsoft Excel",
+    "GitHub",
+    "Visual Studio Code"
   ];
 
   const activeProject =
