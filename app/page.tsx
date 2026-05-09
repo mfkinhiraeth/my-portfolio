@@ -110,7 +110,7 @@ export default function Portfolio() {
                 {/* IMAGE */}
                 <div className="h-48 bg-black">
                   <img
-                    src={p.image}
+                    src="/project1.jpg"
                     className="w-full h-full object-cover hover:scale-110 transition"
                   />
                 </div>
