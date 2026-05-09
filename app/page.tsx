@@ -1,9 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+
+  // ✨ Typing animation
+  const fullText =
+    "Information Technology Student | Web Developer | Data Analyst";
+  const [text, setText] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+
+    const interval = setInterval(() => {
+      setText(fullText.slice(0, i));
+      i++;
+
+      if (i > fullText.length) {
+        clearInterval(interval);
+      }
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const projects = [
     {
@@ -25,22 +45,23 @@ export default function Portfolio() {
         "Built ETL pipeline and KPI dashboards to analyze traffic accidents and contributing factors.",
     },
     {
-      title: "Tverse – Digital Tutoring Platform (Research)",
+      title:
+        "Tverse – Digital Tutoring Platform (Technopreneurship Research)",
       description:
-        "Conceptual business model using Design Thinking for a digital tutoring platform.",
+        "Research-based conceptual business model using Design Thinking approach.",
       tech: ["Design Thinking", "Research", "UI/UX"],
       pdf: "/tverse-article.pdf",
       details:
-        "Published research in IIUM Journal under technopreneurship subject.",
+        "Published in IIUM Journal as part of technopreneurship coursework.",
     },
     {
       title: "Smart Data Analytics Research Unit – Client Project",
       description:
         "Website redesign proposal for KICT research unit.",
-      tech: ["UI/UX", "Requirement Analysis", "Project Management"],
+      tech: ["UI/UX", "Project Management", "Requirement Analysis"],
       images: ["/sda1.jpg", "/sda2.jpg"],
       details:
-        "Worked with Prof. Ts. Dr. Mira Kartiwi on real client requirements.",
+        "Worked with Prof. Ts. Dr. Mira Kartiwi on real client project requirements.",
     },
   ];
 
@@ -77,8 +98,11 @@ export default function Portfolio() {
               Ahmad Nur Hisyam
             </h1>
 
-            <p className="text-gray-300">
-              Information Technology Student | Web Development | Data Analytics
+            {/* ✨ Typing animation */}
+            <p className="text-gray-300 text-lg">
+              <span className="border-r-2 border-indigo-400 pr-1 animate-pulse">
+                {text}
+              </span>
             </p>
 
             <p className="text-gray-400 mt-2">
@@ -109,36 +133,10 @@ export default function Portfolio() {
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
           <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
             <p className="text-gray-300 leading-relaxed">
-              Motivated Information Technology student with strong foundation in web development and data analytics. Experienced in Laravel, MySQL, and data-driven solutions with strong problem-solving skills and teamwork ability.
+              Motivated IT student with strong foundation in web development,
+              data analytics, and system design. Passionate about building
+              real-world solutions using modern technologies.
             </p>
-          </div>
-        </section>
-
-        {/* AWARDS */}
-        <section>
-          <h2 className="text-3xl font-bold mb-6">Awards & Achievements</h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 className="font-semibold">Dean’s List</h3>
-              <p className="text-gray-300 text-sm mt-2">
-                Multiple semesters (IIUM)
-              </p>
-            </div>
-
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 className="font-semibold">Bronze Award – FYP</h3>
-              <p className="text-gray-300 text-sm mt-2">
-                Destinalytics Project
-              </p>
-            </div>
-
-            <div className="bg-white/5 p-6 rounded-2xl border border-white/10">
-              <h3 className="font-semibold">CCNA Certification</h3>
-              <p className="text-gray-300 text-sm mt-2">
-                Cisco Networking Academy
-              </p>
-            </div>
           </div>
         </section>
 
@@ -206,7 +204,6 @@ export default function Portfolio() {
               ✕
             </button>
 
-            {/* IMAGES */}
             {activeProject.images && (
               <div className="flex overflow-x-auto gap-2 mb-4">
                 {activeProject.images.map((img, i) => (
@@ -238,7 +235,6 @@ export default function Portfolio() {
               ))}
             </div>
 
-            {/* PDF */}
             {activeProject.pdf && (
               <a
                 href={activeProject.pdf}
