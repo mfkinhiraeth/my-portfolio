@@ -94,6 +94,39 @@ export default function Portfolio() {
           </div>
         </section>
 
+        {/* AWARDS & ACHIEVEMENTS */}
+<section id="awards">
+  <h2 className="text-3xl font-bold mb-6">Awards & Achievements</h2>
+
+  <div className="grid md:grid-cols-2 gap-6">
+
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:-translate-y-1 transition">
+      <h3 className="text-xl font-semibold">Dean’s List Award</h3>
+      <p className="text-gray-400 mt-1">IIUM</p>
+      <p className="text-gray-300 mt-2">
+        Semester 2 2022/2023, Semester 1 & 2 2024/2025, Semester 1 2025/2026
+      </p>
+    </div>
+
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:-translate-y-1 transition">
+      <h3 className="text-xl font-semibold">Bronze Award – Final Year Project</h3>
+      <p className="text-gray-400 mt-1">IIUM</p>
+      <p className="text-gray-300 mt-2">
+        Awarded for outstanding Final Year Project in data analytics and travel intelligence system.
+      </p>
+    </div>
+
+    <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:-translate-y-1 transition">
+      <h3 className="text-xl font-semibold">CCNAv7: Introduction to Networks</h3>
+      <p className="text-gray-400 mt-1">Cisco Networking Academy</p>
+      <p className="text-gray-300 mt-2">
+        Learned networking fundamentals including routing, switching, IP addressing, and troubleshooting.
+      </p>
+    </div>
+
+  </div>
+</section>
+
         {/* PROJECTS */}
         <section id="projects">
           <h2 className="text-3xl font-bold mb-6">Projects</h2>
