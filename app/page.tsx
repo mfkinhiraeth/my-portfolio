@@ -1,22 +1,16 @@
 export default function Portfolio() {
   const projects = [
     {
-      title: "Petopia",
+      title: "Destinalytics – Travel Analytics Platform (FYP)",
       description:
-        "A service-based eCommerce project offering cat hotel and spa services with booking features and user-friendly interfaces.",
-      tech: ["Laravel", "PHP", "MySQL", "Bootstrap"],
+        "A web-based travel analytics platform that evaluates destinations based on cost, distance, and user preferences. Built with data analytics and business intelligence techniques to generate decision-support insights.",
+      tech: ["Laravel", "MySQL", "Data Analytics", "Power BI"],
     },
     {
-      title: "Ikhwah Library Management System",
+      title: "NYC DOT Data Warehouse Initiative",
       description:
-        "A Laravel-based library system with borrowing, returning, room reservation, fines, and membership features.",
-      tech: ["Laravel", "Blade", "MySQL", "CSS"],
-    },
-    {
-      title: "NYC Collision Data Warehouse",
-      description:
-        "Built a data warehouse using SSIS and dimensional modelling for collision analytics and reporting.",
-      tech: ["SSIS", "SQL Server", "ETL", "Data Warehousing"],
+        "Designed a data warehouse using dimensional modelling for NYC traffic crash data (2021–2022). Built KPIs and dashboards for injuries, fatalities, and contributing factors analysis.",
+      tech: ["MySQL", "ETL", "Data Warehousing", "Power BI", "Tableau"],
     },
   ];
 
@@ -24,125 +18,89 @@ export default function Portfolio() {
     "Laravel",
     "HTML",
     "CSS",
-    "JavaScript",
+    "Java",
+    "Python",
     "MySQL",
-    "PHP",
-    "Data Warehousing",
-    "SSIS",
-    "Microsoft Excel",
-    "Cybersecurity Basics",
+    "Power BI",
+    "Tableau",
+    "Microsoft Office",
+    "VS Code",
+    "Data Analytics",
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-white px-6 py-10">
-      <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
-        <section className="grid md:grid-cols-2 gap-10 items-center mb-20">
-          <div>
-            <p className="text-blue-400 font-semibold tracking-wide uppercase mb-3">
-              Portfolio Website
-            </p>
+    <main className="min-h-screen bg-[#0b0f1a] text-white">
 
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-              Hi, I'm Ahmad Nur Hisyam
-            </h1>
-
-            <p className="text-slate-300 text-lg leading-relaxed mb-8">
-              A Computer Science student passionate about web development,
-              analytics, and system development. I enjoy building functional
-              applications with clean UI and solving real-world problems through
-              technology.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#projects"
-                className="bg-blue-500 hover:bg-blue-600 transition px-6 py-3 rounded-2xl font-medium shadow-lg"
-              >
-                View Projects
-              </a>
-
-              <a
-                href="https://github.com"
-                target="_blank"
-                className="border border-slate-600 hover:border-white px-6 py-3 rounded-2xl transition"
-              >
-                GitHub
-              </a>
-            </div>
+      {/* NAVBAR */}
+      <nav className="fixed top-0 w-full bg-black/30 backdrop-blur-md border-b border-white/10 z-50">
+        <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+          <h1 className="font-bold tracking-wide">AHMAD HISYAM</h1>
+          <div className="flex gap-6 text-sm text-gray-300">
+            <a href="#about" className="hover:text-white">About</a>
+            <a href="#education" className="hover:text-white">Education</a>
+            <a href="#projects" className="hover:text-white">Projects</a>
+            <a href="#skills" className="hover:text-white">Skills</a>
           </div>
+        </div>
+      </nav>
 
-          <div className="flex justify-center">
-            <div className="w-72 h-72 rounded-full bg-gradient-to-tr from-blue-500 to-cyan-300 p-1 shadow-2xl">
-              <img
-                src="/Profile.jpg"
-                alt="Profile"
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-          </div>
-        </section>
+      {/* HERO */}
+      <section className="pt-32 pb-20 text-center bg-gradient-to-b from-indigo-900/30 to-transparent">
+        <h1 className="text-5xl md:text-6xl font-bold mb-4">
+          Ahmad Nur Hisyam
+        </h1>
+        <p className="text-gray-300 text-lg">
+          Information Technology Student | Web Development | Data Analytics
+        </p>
+        <p className="text-gray-400 mt-2">
+          Gombak, Malaysia | hisyammansor21@gmail.com | 013-597 3136
+        </p>
+      </section>
 
-        {/* About Section */}
-        <section className="mb-20">
+      <div className="max-w-6xl mx-auto px-6 space-y-24 pb-20">
+
+        {/* ABOUT */}
+        <section id="about" className="scroll-mt-24">
           <h2 className="text-3xl font-bold mb-6">About Me</h2>
-
-          <div className="bg-slate-900/60 border border-slate-700 rounded-3xl p-8 shadow-xl">
-            <p className="text-slate-300 leading-relaxed text-lg">
-              I am currently pursuing a Bachelor in Computer Science and have
-              worked on multiple academic and real-client projects involving web
-              development, system design, analytics, and databases. I am
-              interested in software engineering, UI/UX, and modern web
-              technologies.
+          <div className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-md hover:scale-[1.01] transition">
+            <p className="text-gray-300 leading-relaxed">
+              Motivated Information Technology student with strong foundations in web development and data analytics. Experienced in Laravel-based systems and data-driven solutions. Passionate about building clean, functional, and impactful applications.
             </p>
           </div>
         </section>
 
-        {/* Skills Section */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8">Skills</h2>
+        {/* EDUCATION */}
+        <section id="education">
+          <h2 className="text-3xl font-bold mb-6">Education</h2>
+          <div className="space-y-4">
 
-          <div className="flex flex-wrap gap-4">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="bg-slate-800 border border-slate-700 px-5 py-3 rounded-2xl shadow-md hover:scale-105 transition"
-              >
-                {skill}
-              </div>
-            ))}
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
+              <h3 className="font-semibold">Bachelor of Information Technology</h3>
+              <p className="text-gray-400">IIUM</p>
+              <p>CGPA: 3.53</p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
+              <h3 className="font-semibold">Foundation in Engineering & CS</h3>
+              <p className="text-gray-400">CFS IIUM</p>
+              <p>CGPA: 2.75</p>
+            </div>
+
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section id="projects" className="mb-20">
-          <h2 className="text-3xl font-bold mb-8">Projects</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-slate-900 border border-slate-700 rounded-3xl p-6 shadow-xl hover:-translate-y-2 transition"
-              >
-                <div className="h-40 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-400/20 mb-6 flex items-center justify-center text-3xl font-bold text-blue-300">
-                  {project.title.charAt(0)}
-                </div>
-
-                <h3 className="text-2xl font-semibold mb-4">
-                  {project.title}
-                </h3>
-
-                <p className="text-slate-300 mb-5 leading-relaxed">
-                  {project.description}
-                </p>
-
+        {/* PROJECTS */}
+        <section id="projects">
+          <h2 className="text-3xl font-bold mb-6">Projects</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {projects.map((p, i) => (
+              <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:-translate-y-1 transition">
+                <h3 className="text-xl font-semibold mb-2">{p.title}</h3>
+                <p className="text-gray-300 mb-4">{p.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="bg-blue-500/10 text-blue-300 border border-blue-500/20 px-3 py-1 rounded-xl text-sm"
-                    >
-                      {tech}
+                  {p.tech.map((t, j) => (
+                    <span key={j} className="text-xs bg-indigo-500/20 px-3 py-1 rounded-full text-indigo-200">
+                      {t}
                     </span>
                   ))}
                 </div>
@@ -151,54 +109,23 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Education Section */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8">Education</h2>
-
-          <div className="bg-slate-900 border border-slate-700 rounded-3xl p-8 shadow-xl">
-            <h3 className="text-2xl font-semibold mb-2">
-              Bachelor of Computer Science
-            </h3>
-
-            <p className="text-slate-400 mb-4">
-              International Islamic University Malaysia (IIUM)
-            </p>
-
-            <p className="text-slate-300">
-              Dean's List recipient multiple times with strong interest in
-              software engineering and analytics.
-            </p>
+        {/* SKILLS */}
+        <section id="skills">
+          <h2 className="text-3xl font-bold mb-6">Skills</h2>
+          <div className="flex flex-wrap gap-3">
+            {skills.map((s, i) => (
+              <span key={i} className="bg-white/5 border border-white/10 px-4 py-2 rounded-xl text-sm hover:bg-white/10 transition">
+                {s}
+              </span>
+            ))}
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section>
-          <div className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-10 text-center shadow-2xl">
-            <h2 className="text-4xl font-bold mb-4">Let's Connect</h2>
+        {/* FOOTER */}
+        <footer className="text-center text-gray-500 pt-10">
+          © 2026 Ahmad Nur Hisyam. Built with Next.js & Tailwind.
+        </footer>
 
-            <p className="text-lg mb-8 text-white/90">
-              Feel free to reach out for internships, collaborations, or project
-              opportunities.
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="mailto:your-email@example.com"
-                className="bg-white text-slate-900 px-6 py-3 rounded-2xl font-semibold hover:scale-105 transition"
-              >
-                Email Me
-              </a>
-
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                className="border border-white px-6 py-3 rounded-2xl hover:bg-white hover:text-slate-900 transition"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </section>
       </div>
     </main>
   );
