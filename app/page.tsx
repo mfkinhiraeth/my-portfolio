@@ -72,7 +72,7 @@ export default function Portfolio() {
           <div className="flex justify-center">
             <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-indigo-500 shadow-xl hover:scale-105 transition">
               <img
-                src="/profile.jpg"
+                src="/Profile.jpg"
                 alt="Profile"
                 className="w-full h-full object-cover"
               />
