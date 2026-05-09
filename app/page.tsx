@@ -114,9 +114,13 @@ export default function Portfolio() {
               Gombak, Malaysia | hisyammansor21@gmail.com
             </p>
 
-            <button className="mt-6 px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition">
-              Download CV
-            </button>
+            <a
+            href="/Ahmad Nur Hisyam Bin Mohamad Mansor - Resume.pdf"
+            download
+            className="mt-6 inline-block px-5 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition"
+            >
+            Download Resume
+            </a>
           </div>
 
           <div className="flex justify-center animate-[fadeIn_1.2s_ease-out]">
