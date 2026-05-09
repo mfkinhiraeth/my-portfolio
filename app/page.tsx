@@ -11,7 +11,7 @@ export default function Portfolio() {
       description:
         "A web-based travel analytics platform that evaluates destinations based on cost, distance, and user preferences. Built with data analytics and business intelligence techniques.",
       tech: ["Laravel", "MySQL", "Power BI"],
-      images: ["project1.jpg", "/project1b.jpg"],
+      images: ["/project1.jpg", "/project1b.jpg"],
       details:
         "Final Year Project focused on travel decision support system using data analytics, filtering algorithms, and visualization dashboards.",
     },
@@ -20,7 +20,7 @@ export default function Portfolio() {
       description:
         "Designed a data warehouse using dimensional modelling for NYC traffic crash data (2021–2022).",
       tech: ["MySQL", "ETL", "Tableau"],
-      images: ["project2.jpg", "/project2b.jpg"],
+      images: ["/project2.jpg", "/project2b.jpg"],
       details:
         "Built ETL pipeline and KPI dashboards to analyze traffic accidents, injuries, fatalities, and contributing factors.",
     },
@@ -106,16 +106,16 @@ export default function Portfolio() {
                 className="cursor-pointer bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:-translate-y-2 transition"
               >
 
-                {/* MULTIPLE IMAGES */}
-                <div className="h-48 flex overflow-x-auto">
-                  {p.images.map((img, idx) => (
-                    <img
-                      key={idx}
-                      src={img}
-                      className="w-full object-cover"
-                    />
-                  ))}
-                </div>
+        {/* MULTIPLE IMAGES */}
+            <div className="h-48 flex overflow-x-auto gap-2">
+              {p.images.map((img, idx) => (
+              <img
+                key={idx}
+                src={img}
+                className="h-full w-64 flex-shrink-0 object-cover rounded-lg"
+                />
+              ))}
+            </div>
 
                 <div className="p-5">
                   <h3 className="text-xl font-semibold">{p.title}</h3>
