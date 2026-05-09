@@ -160,36 +160,29 @@ export default function Portfolio() {
               >
 
         {/* MULTIPLE IMAGES */}
-            <div className="h-48 flex overflow-x-auto gap-2">
-              {p.images.map((img, idx) => (
-              <img
-                key={idx}
-                src={img}
-                className="h-full w-64 flex-shrink-0 object-cover rounded-lg"
-                />
-              ))}
-            </div>
-
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold">{p.title}</h3>
-                  <p className="text-gray-300 text-sm mt-2">{p.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+{p.images && p.images.length > 0 && (
+  <div className="h-48 flex overflow-x-auto gap-2">
+    {p.images.map((img, idx) => (
+      <img
+        key={idx}
+        src={img}
+        className="h-full w-64 flex-shrink-0 object-cover rounded-lg"
+      />
+    ))}
+  </div>
+)}
 
         {/* MODAL */}
 
         {activeProject.pdf && (
-  <a
-    href={activeProject.pdf}
-    target="_blank"
-    className="inline-block mt-4 px-4 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition"
-  >
-    View Research Paper (PDF)
-  </a>
-)}
+        <a
+          href={activeProject.pdf}
+          target="_blank"
+          className="inline-block mt-4 px-4 py-2 bg-indigo-500 rounded-xl hover:bg-indigo-600 transition"
+        >
+        View Research Paper (PDF)
+        </a>
+        )}
         {activeProject && (
           <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-6">
             <div className="bg-[#111827] max-w-2xl w-full rounded-2xl p-6 border border-white/10 relative">
