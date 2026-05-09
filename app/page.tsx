@@ -31,7 +31,7 @@ export default function Portfolio() {
       description:
         "A web-based travel analytics platform that evaluates destinations based on cost, distance, and user preferences.",
       tech: ["Laravel", "MySQL", "Power BI"],
-      images: ["/project1.png", "/project1b.jpg"],
+      images: ["/project2.jpeg", "/project2b.jpeg"],
       details:
         "Final Year Project focused on travel decision support system using data analytics and visualization dashboards.",
     },
@@ -40,7 +40,7 @@ export default function Portfolio() {
       description:
         "Designed a data warehouse using dimensional modelling for NYC traffic crash data.",
       tech: ["MySQL", "ETL", "Tableau"],
-      images: ["/project2.png", "/project2b.jpg"],
+      images: ["/project1.png", "/project1b.png"],
       details:
         "Built ETL pipeline and KPI dashboards to analyze traffic accidents and contributing factors.",
     },
@@ -59,7 +59,7 @@ export default function Portfolio() {
       description:
         "Website redesign proposal for KICT research unit.",
       tech: ["UI/UX", "Project Management", "Requirement Analysis"],
-      images: ["/sda1.jpg", "/sda2.jpg"],
+      images: ["/sda1.jpeg", "/sda2.jpeg"],
       details:
         "Worked with Prof. Ts. Dr. Mira Kartiwi on real client project requirements.",
     },
