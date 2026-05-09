@@ -104,9 +104,9 @@ export default function Portfolio() {
       <h3 className="text-xl font-semibold">Dean’s List Award</h3>
       <p className="text-gray-400 mt-1">IIUM</p>
       <p className="text-gray-300 mt-2">
-        Semester 2 2022/2023 
-        Semester 1 & 2 2024/2025 
-        Semester 1 2025/2026
+        <p>Semester 2 2022/2023 </p>
+        <p>Semester 1 & 2 2024/2025 </p>
+        <p>Semester 1 2025/2026</p>
       </p>
     </div>
 
